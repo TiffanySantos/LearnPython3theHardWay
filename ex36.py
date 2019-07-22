@@ -1,4 +1,5 @@
 import random
+import time
 
 def start():
     name = str(input("What's your name?: "))
@@ -97,7 +98,7 @@ def yellow_room():
 
 
 def green_room():
-    print('''Welcome to to green room.
+    print('''\nWelcome to to green room.
     Green day reminds us of our need to look after our planet, on which many aninals are endagered. 
     One such animal is the Tiger. 
     In this room you will complete a very famous poem by William Blake. 
@@ -138,34 +139,68 @@ def green_room():
 
 
 def blue_room():
-    print("The blue room is under water.")
+    print("\n\nThe blue room is under water.")
     print("In it you must guess a number from 1 - 10.")
     print("If you are correct within the try limit, you get a blue gem.")
     print("If you are not, you leave empty handed.")
     number = random.randint(1, 10)
     guess_count = 0
-    while guess_count < 3:
-        print("Guess a number:")
-        guess = input()
-        i = int(guess)
-        guess_count +=1
-        if i < number:
-            print("Too low.")
-        elif i > number:
-            print("Too high.")
+    guess = input()
+    while guess_count < 3:   
+        try:
+            guess = int(input("Guess a number:"))
+            i = int(guess)
+        except ValueError:
+            print("You MUST enter a number:")   
         else:
-            break
-    if guess_count is 0 and i != number:
-        print("\nYou have no more guesses left, you don't get a gem.")
+            if i < number:
+                print("Too low.")
+            elif i > number:
+                print("Too high.")
+        guess_count +=1
+    if guess != number:
+        print("\nYou have no more guesses left, you don't get a gem." )
         return False
     else:
-        print("\nWell done! You get a blue gem.")
+        print("\nWell done! You get a blue gem."  )
         return True
 
-#def indigo_room():
 
-#indigo_room()
-
+def indigo_room():
+    print("\n\nIn YOU go into the inDIgo room!")
+    print("Where a riddle is waiting for you.")
+    print('''What 8 letter word can have a letter taken away and
+    it still makes a word. 
+    Take another letter away and
+    it still makes a word. 
+    Keep on doing that until you have one letter left. 
+    What is the word?''')
+    print("You have three tries, so THINK before you type")
+    print("hint: that 8 letter word starts with an 's' and ends in a 'g'")
+    word = "starting"
+    guess = " "
+    guess_count = 0
+    while guess != word and (guess_count < 3):
+        guess = input("Your guess: ")    
+        print("Try again.")
+        guess_count +=1
+        if guess == word:
+            print("Good job! You get an indigo gem this time.")
+            print("Starting")
+            time.sleep(1)
+            print("Staring")
+            time.sleep(1)
+            print("String")
+            time.sleep(1)
+            print("Sing")
+            time.sleep(1)
+            print("Sin")
+            time.sleep(1)
+            print("In")
+            time.sleep(1)
+            print("I")
+            return True 
+             
 
 #def violet_room():
 
@@ -173,7 +208,7 @@ def blue_room():
 
 
 #def rainbow_room():
-
+    #print("\nYou have been a fantastic Rainbow Runner, this is the end of the game!")
 #rainbow_room()
 
 # counting gems function. each room returns a bool to this function. 
@@ -194,11 +229,8 @@ def run_rooms(rooms):
 def main():
     start()
 
-    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room])
+    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room, indigo_room])
     
-    print("\nYou have been a fantastic Rainbow Runner, this is the end of the game!")
-    
-
 # terminal lets python know you're running directly.
 if __name__ == "__main__":
     main()
