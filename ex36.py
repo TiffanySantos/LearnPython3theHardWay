@@ -207,9 +207,10 @@ def indigo_room():
 #violet_room()
 
 
-#def rainbow_room():
-    #print("\nYou have been a fantastic Rainbow Runner, this is the end of the game!")
-#rainbow_room()
+def rainbow_room():
+    print("Congratulations on reaching the rainbow room at last!")
+    return True
+print("You have been a fantastic Rainbow Runner, you may take your gems with you and the small pot of gold, this is the end of the game!")
 
 # counting gems function. each room returns a bool to this function. 
 def run_rooms(rooms):
@@ -229,7 +230,7 @@ def run_rooms(rooms):
 def main():
     start()
 
-    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room, indigo_room])
+    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room, indigo_room, rainbow_room])
     
 # terminal lets python know you're running directly.
 if __name__ == "__main__":
