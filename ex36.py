@@ -7,9 +7,12 @@ def start():
     print("Welcome to the Rainbow Runner!")
     print("This is a Crystal Maze style game.")
     print("\nYour objective is to earn a gem in each room.")
+    time.sleep(3)
     print("Each coloured room will have a task, solving each task correctly will get you a gem.")
     print("Incorrect answers or bad decisions will result in no gem.")
-    print("\nYou will be moved on from room to room, unable to go back, so make your choices wisely.")
+    time.sleep(5)
+    print()
+    print("You will be moved on from room to room, unable to go back, so make your choices wisely.")
     print("Are you ready to be a Rainbow Runner today?! Great, let's begin in the Red Room:")
 
 
@@ -18,18 +21,19 @@ def gem_count(gem):
 
 
 def red_room():
-    print('''\nYou are in a red room,
-            on the blood red table there are three glasses, 
-            each containing a different coloured liquid. 
-            In order to obtain your first gem you must drink the liquid 
-            on the opposite side of the colour wheel as the room you're in.
-    Which colour do you choose?
-    a) bue
-    b) yellow
-    c) green''')
+    time.sleep(5)
+    print()
+    print("\nYou are in a red room, on the blood red table there are three glasses, each containing a different coloured liquid.") 
+    print()       
+    print("In order to obtain your first gem you must drink the liquid on the opposite side of the colour wheel as the room you're in.")
+    print("Which colour do you choose?")
+    print()
+    print ("a) bue")
+    print("b) yellow")
+    print("c) green")
     
     answer = input("Letter: ")
-    if answer == "c":
+    if answer == "c" or "green" or "c)green":
         print("Well done, you have earned your first gem!")
         return True 
     else:
@@ -37,10 +41,17 @@ def red_room():
     return False
 
 def orange_room():
-    print("\nAn isogram is a word which does not repeat letters.")
+    time.sleep(5)
+    print()
+    print("\nWelcome to the second room, the Orange room!")
+    print("An isogram is a word which does not repeat letters.")
+    print()
     print("Which is the longest one in the English language?")
+    print()
     print("You have five attempts to guess the word")
     print("hint: it contains the word copy, has a prefix and a suffix, and is an adjective.")
+    print("The word is FIFTEEN letters long!")
+    time.sleep(1)
     word = "uncopyrightable"
     guess = " "
     guess_count = 0
@@ -48,7 +59,7 @@ def orange_room():
     guess_max = False
     while guess != word and not guess_max:
         if guess_count < guess_limit:
-            guess = input("Enter a guess: ")
+            guess = input("\nEnter a guess: ")
             guess_count += 1
         else:
             guess_max = True
@@ -61,7 +72,9 @@ def orange_room():
 
    
 def yellow_room():
-    print("\nThis is the yellow room, in this room we have a little game of hangman for you to play.")
+    time.sleep(5)
+    print()
+    print("\nThis is the Yellow room, in this room we have a little game of hangman for you to play.")
     word = "rainbow" # secret word
     display = [] # create an empty list
     used = [] # creating a list of used letters
@@ -98,12 +111,17 @@ def yellow_room():
 
 
 def green_room():
-    print('''\nWelcome to to green room.
-    Green day reminds us of our need to look after our planet, on which many aninals are endagered. 
-    One such animal is the Tiger. 
-    In this room you will complete a very famous poem by William Blake. 
-    You'll earn yourself a green gem if you guess half or more correctly. 
-    \n#save_the_tiger''')
+    time.sleep(5)
+    print()
+    print('''\nWelcome to to Green room.
+    Green day reminds us of our need to look after our planet, 
+    on which many aninals are endagered. 
+    One such animal is the Tiger.''')
+    time.sleep(1)
+    print()
+    print("In this room you will complete a very famous poem by William Blake.")
+    print("You'll earn yourself a green gem if you guess more than half correctly.")
+    print()
     adj = "bright"
     noun1 = "night"
     noun2 = "eye"
@@ -114,44 +132,48 @@ def green_room():
         print("correct") 
         correct += 1  
     else:
-        print("Sorry, not this time.")
+        print("incorrect")
         incorrect += 1
     if input("In the forests of the ") == noun1:
         print("correct") 
         correct += 1 
     else:
-        print("Sorry, not this time.")
+        print("incorrect")
         incorrect += 1
     if input("What immortal hand or ") == noun2:
         print("correct")
         correct += 1 
     else:
-        print("Sorry, not this time.")
+        print("incorrect")
         incorrect += 1
     if input("Could frame thy fearful ") == noun3: 
         print("correct")
         correct += 1 
     else:
-        print("Sorry, not this time.")
+        print("incorrect")
         incorrect += 1
-    if correct >= incorrect:
+    if correct > incorrect:
         return True
 
 
 def blue_room():
-    print("\n\nThe blue room is under water.")
+    time.sleep(5)
+    print()
+    print("\nThe Blue room is under water.")
     print("In it you must guess a number from 1 - 10.")
-    print("If you are correct within the try limit, you get a blue gem.")
+    time.sleep(3)
+    print("If you are correct within the try limit of 3, you get a blue gem.")
     print("If you are not, you leave empty handed.")
+    time.sleep(1)
     number = random.randint(1, 10)
     guess_count = 0
-    guess = input()
+    guess = int
     while guess_count < 3:   
         try:
-            guess = int(input("Guess a number:"))
+            guess = int(input("Guess a number: "))
             i = int(guess)
         except ValueError:
-            print("You MUST enter a number:")   
+            print("You MUST enter a number: sta")   
         else:
             if i < number:
                 print("Too low.")
@@ -167,24 +189,31 @@ def blue_room():
 
 
 def indigo_room():
-    print("\n\nIn YOU go into the inDIgo room!")
+    time.sleep(5)
+    print()
+    print("In you go into the Indigo room!")
     print("Where a riddle is waiting for you.")
-    print('''What 8 letter word can have a letter taken away and
-    it still makes a word. 
-    Take another letter away and
-    it still makes a word. 
-    Keep on doing that until you have one letter left. 
-    What is the word?''')
+    time.sleep(3)
+    print()
+    print("What 8 letter word can have a letter taken away and it still makes a word.")
+    time.sleep(3)
+    print("Take another letter away and it still makes a word.")
+    time.sleep(3)
+    print("Keep on doing that until you have one letter left.")
+    print()
+    print("What is the word?")
+    time.sleep(2)
     print("You have three tries, so THINK before you type")
     print("hint: that 8 letter word starts with an 's' and ends in a 'g'")
     word = "starting"
     guess = " "
     guess_count = 0
-    while guess != word and (guess_count < 3):
-        guess = input("Your guess: ")    
-        print("Try again.")
-        guess_count +=1
-        if guess == word:
+    while guess_count < 3: 
+        guess = input("Your guess: ")
+        if guess != word:    
+            print("Try again.")
+            guess_count +=1       
+        else:
             print("Good job! You get an indigo gem this time.")
             print("Starting")
             time.sleep(1)
@@ -202,16 +231,46 @@ def indigo_room():
             return True 
              
 
-#def violet_room():
-
-#violet_room()
+def violet_room():
+    time.sleep(3)
+    print()
+    print("\nYou have made your way to the Violet room.")
+    print("In this room you you find two doors, one to the left and the other to the right.")
+    print("Which one do you take, left or right?")
+    choice = input(">")
+    if choice == "left":
+        rainbow_room ()
+    else:
+        print("\nSo, you decided to go right...there are six doors in a row before you.")
+        time.sleep(2)    
+        print("Each of a different colour...red, orange, yellow, green, blue and indigo")  
+        time.sleep(2)  
+        print("They look familiar, don't they?")   
+        time.sleep(2) 
+        print("Which of them would you like to return to?") 
+        room = input("\nType a colour: ")  
+        if room == "red": 
+            red_room() 
+        elif room == "orange":
+            orange_room()
+        elif room == "yellow":
+            yellow_room()
+        elif room == "green":
+            green_room()
+        elif room == "blue":
+            blue_room()
+        elif room == "indigo":
+            indigo_room()
+        else:
+            violet_room ()
 
 
 def rainbow_room():
-    print("Congratulations on reaching the rainbow room at last!")
+    print()
+    print()
+    print("Congratulations on reaching the Rainbow room at last!")
+    print("You have been a fantastic Rainbow Runner, you may take your gems with you and the small pot of gold, this is the end of the game!")
     return True
-print("You have been a fantastic Rainbow Runner, you may take your gems with you and the small pot of gold, this is the end of the game!")
-
 # counting gems function. each room returns a bool to this function. 
 def run_rooms(rooms):
     gem = 0
@@ -229,8 +288,7 @@ def run_rooms(rooms):
 #function main, top level stuff goes here
 def main():
     start()
-
-    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room, indigo_room, rainbow_room])
+    gem = run_rooms([red_room, orange_room, yellow_room, green_room, blue_room, indigo_room, violet_room, rainbow_room])
     
 # terminal lets python know you're running directly.
 if __name__ == "__main__":
